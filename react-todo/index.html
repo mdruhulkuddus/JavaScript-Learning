@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List (React)</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      input[type="text"] {
+        width: 95%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      .buttons {
+        display: flex;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        color: #0056b3;
+      }
+
+      .link-button {
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        text-decoration: underline;
+        color: #000000;
+        padding: 0px 10px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useState } = React;
+
+      function TodoApp() {
+        const [todos, setTodos] = useState([]);
+        const [todoText, setTodoText] = useState("");
+
+        function addTodo() {
+          if (todoText.trim() !== "") {
+            setTodos((prevTodos) => [...prevTodos, todoText.trim()]);
+            setTodoText("");
+          }
+        }
+
+        function editTodo(index) {
+          const newText = prompt("Enter updated todo:");
+          if (newText !== null) {
+            setTodos((prevTodos) => {
+              const updatedTodos = [...prevTodos];
+              updatedTodos[index] = newText;
+              return updatedTodos;
+            });
+          }
+        }
+
+        function deleteTodo(index) {
+          setTodos((prevTodos) => prevTodos.filter((_, i) => i !== index));
+        }
+
+        return (
+          <div className="container">
+            <h1>Todo List (React)</h1>
+            <input type="text" value={todoText} onChange={(e) => setTodoText(e.target.value)} placeholder="Add new todo" />
+            <button onClick={addTodo}>Add Todo</button>
+            <ul>
+              {todos.map((todo, index) => (
+                <li key={index}>
+                  <span>{todo}</span>
+                  <div className="buttons">
+                    <button className="link-button" onClick={() => editTodo(index)}>
+                      Edit
+                    </button>
+                    <button className="link-button" onClick={() => deleteTodo(index)}>
+                      Delete
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<TodoApp />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
