@@ -27,3 +27,13 @@ console.log(promise)
 //     .catch((error) => {
 //       console.error(error);
 //     });
+
+const promise1 = Promise.resolve(50);
+const promise2 = Promise.resolve(60);
+const promise3 = Promise.reject(0);
+
+const promisesWithoutReject = [promise1, promise2, promise3];
+Promise.all(promisesWithoutReject)
+  .then(result => console.log(result))
+  .catch(error => console.log(error));
+  
