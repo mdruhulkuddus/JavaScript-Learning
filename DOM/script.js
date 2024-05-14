@@ -30,7 +30,8 @@ headerELement.textContent = "DOM- document object Model";
 // console.log(items);
 
 // parent/child relation
-// const grandParent = document.querySelector('.list');
+const grandParent = document.querySelector('.list');
+
 // const parent = grandParent.children;
 // const child1 = parent[0].children;
 // const child = parent[1].children;
@@ -40,10 +41,13 @@ headerELement.textContent = "DOM- document object Model";
 // childrenTwo.style.color = 'red';
 // console.log(childrenTwo);
 
+// CREATEING ELEMENT
 const divElement = document.createElement('div');
 divElement.className = "javascript";
 divElement.setAttribute('id', 'js');
 divElement.setAttribute('title', 'red div');
+
+grandParent.append(divElement);
 
 
 
