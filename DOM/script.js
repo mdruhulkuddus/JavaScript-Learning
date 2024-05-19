@@ -24,7 +24,11 @@ headerELement.textContent = "DOM- document object Model";
 // console.log(headerELement);
 // headerELement.style.fontSize = '50px';
 
-console.log(document.getElementsByClassName('htag'));
+// console.log(document.getElementsByClassName('htag'));
 
-let items = document.getElementsByTagName('h1');
-console.log(items);
+// let items = document.getElementsByTagName('h1');
+// console.log(items);
+
+let header = document.querySelector('.htag');
+header.textContent = "change";
+console.log(header);
