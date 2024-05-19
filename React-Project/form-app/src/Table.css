@@ -1,0 +1,15 @@
+.Table{
+    margin: auto;
+    text-align: center;
+}
+
+table{
+    margin: auto;
+    padding: 5px; 
+    /* background-color: darkcyan; */
+}
+table tr td{
+    padding: 10px;
+    margin-top: 15px;
+    border-bottom: 2px solid #cccc;
+}
