@@ -1,4 +1,4 @@
-class Person{
+export class Person{
     constructor(name){
         this.name = name;
     }
@@ -7,4 +7,3 @@ class Person{
         console.log("walk");
     }
 }
-
