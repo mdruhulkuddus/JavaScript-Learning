@@ -1,20 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
+// import "./index.css";
+import Card from "./components/Card";
+import App from "./App";
 
-const pStyle = {
-  color: "green",
-  textAlign: "center"
-}
+// const pStyle = {
+//   color: "green",
+//   textAlign: "center"
+// }
 
-const jsCode = "this is js code";
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// const jsCode = "this is js code";
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(
+//   <div>
+//     <h1 style={{ color: "red", fontSize: "3rem" }}>Hello world</h1>
+//     {/* <p style={pStyle}>Here is the world</p>  */}
+//     <p className="pStyle largeFont">Here is the world</p>
+//     <p>{jsCode}</p>
+//     {/* use curly brace for js variable use */}
+//   </div>
+// );
+
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <div>
-      <h1 style={{color: "red", fontSize: "6rem"}}>Hello world</h1> 
-      <p style={pStyle}>Here is the world</p> 
-    <p>{jsCode}</p> 
-    {/* use curly brace for js variable use */}
-    </div>
-    
+<App />
 );
-
