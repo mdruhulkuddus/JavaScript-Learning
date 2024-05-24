@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import React from "react";
+import FORM from "./component/FORM/Form";
 // function App() {
 //   return (
 //     <div className="App">
@@ -26,10 +27,14 @@ import './App.css';
 
 import Clock from "./component/Clock";
 
-function App(){
+function App() {
   return (
-    <div ><Clock locale="bn-BD"/></div>
-    
+    <div>
+      <Clock locale="bn-BD" />
+
+      {/* form */}
+      <FORM />
+    </div>
   );
 }
 
