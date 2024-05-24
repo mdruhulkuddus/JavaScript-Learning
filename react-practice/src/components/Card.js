@@ -1,8 +1,9 @@
-
-
+// functional component
 
 function Card(props){
-  const{titleText, description} = props;
+
+  const{titleText, description} = props; // destructuring
+
     return (
       <div className="card">
     <div className="container">
