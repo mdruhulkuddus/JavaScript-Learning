@@ -20,7 +20,15 @@ import React from "react";
 // import EVENT_HANDLER2 from "./components/EVENT_HANDLER/binding";
 
 // import HooksUseState from "./components/HooksUseState";
-import EventBubbling from "./components/EventBubbling";
+// import EventBubbling from "./components/EventBubbling";
+// import FORM from "./components/FORM/Form"
+// import FORM2 from "./components/FORM/useStateObj"
+
+// import Child from "./components/STATE_LIFTING/Child";
+// import TODOHOME from "./components/STATE_LIFTING/TODOAPP/Home";
+import SignUp from "./components/FORM_VALIDATE/SignUp";
+import Toggle from "./components/Toggle";
+import FAQs from "./components/FAQ/FAQs";
 
 // let items = [];
 // for(let i = 0; i < Data.length; i++){
@@ -58,6 +66,11 @@ import EventBubbling from "./components/EventBubbling";
 
 function App() {
 
+  // STATE_LIFTING
+// const data = "i am from parent data (App)";
+// const handleChildData = (childData) =>{
+//   console.log("App : " +  childData);
+// }
   return(
     <div>
     {/* <h1>Profiles</h1> */}
@@ -105,7 +118,23 @@ function App() {
 {/* <EVENT_HANDLER2 /> */}
 
 {/* useState Hooks */}
-<EventBubbling />
+{/* <EventBubbling /> */}
+
+{/* <FORM /> */}
+{/* <FORM2 /> */}
+
+ {/* STATE_LIFTING- child to parent props */}
+{/* <Child data={data} onChildData = {handleChildData}/> */}
+{/* <TODOHOME /> */}
+
+
+{/* form validation by formik  */}
+{/* <SignUp /> */}
+
+{/* <Toggle /> */}
+<FAQs />
+
+
 
   </div>
   );
