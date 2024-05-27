@@ -29,6 +29,8 @@ import React from "react";
 import SignUp from "./components/FORM_VALIDATE/SignUp";
 import Toggle from "./components/Toggle";
 import FAQs from "./components/FAQ/FAQs";
+import UseEffectExam from "./components/useEffect/UseEffectExam";
+import DataFetch from "./components/useEffect/DataFetch";
 
 // let items = [];
 // for(let i = 0; i < Data.length; i++){
@@ -132,10 +134,10 @@ function App() {
 {/* <SignUp /> */}
 
 {/* <Toggle /> */}
-<FAQs />
+{/* <FAQs /> */}
 
-
-
+{/* <UseEffectExam /> */}
+<DataFetch />
   </div>
   );
  
