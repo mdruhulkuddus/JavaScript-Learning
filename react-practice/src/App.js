@@ -31,6 +31,9 @@ import Toggle from "./components/Toggle";
 import FAQs from "./components/FAQ/FAQs";
 import UseEffectExam from "./components/useEffect/UseEffectExam";
 import DataFetch from "./components/useEffect/DataFetch";
+import CusDataFetch from "./components/CustomHooks/DataFetch";
+import ToastInTODO from "./components/ToastMessage/ToastInTODO";
+import HomeCountryAPP from "./components/CountryApp/HomeCountryAPP";
 
 // let items = [];
 // for(let i = 0; i < Data.length; i++){
@@ -137,7 +140,17 @@ function App() {
 {/* <FAQs /> */}
 
 {/* <UseEffectExam /> */}
-<DataFetch />
+{/* <DataFetch /> */}
+
+{/* Custorm hooks */}
+{/* <CusDataFetch /> */}
+
+{/* toast message */}
+{/* <ToastInTODO /> */}
+
+{/* project */}
+{/* coutryAPP */}
+<HomeCountryAPP />
   </div>
   );
  
