@@ -12,7 +12,8 @@ const Countries = (props) => {
 
         return (
             <Col md={3} className="mb-4 d-flex justify-content-center">
-            <Country {...countryNew} key={countryNew.id}/>
+            <Country {...countryNew} key={countryNew.id} onRemoveCountry={props.onRemoveCounrty}/>
+            
             </Col>
         );
       })}
