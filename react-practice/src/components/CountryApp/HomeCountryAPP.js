@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Countries from "./Countries";
 import Search from "./Search";
 import {Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { MdOutlineLightMode } from "react-icons/md";
+import { MdOutlineDarkMode } from "react-icons/md";
 
 const url = `https://restcountries.com/v3.1/all`;
 
@@ -61,7 +63,7 @@ const HomeCountryAPP = () => {
       {/* <h1>Courtrey app - {filteredCountries && filteredCountries.length}</h1> */}
       <Navbar expand="lg" className="bg-body-tertiary" sticky="top" >
       <Container fluid>
-        <Navbar.Brand href="#">Courtrey API App</Navbar.Brand>
+        <Navbar.Brand href="#">Courtrey Info</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -69,11 +71,18 @@ const HomeCountryAPP = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">{filteredCountries && filteredCountries.length}</Nav.Link>
-            {/* <Nav.Link href="#action2">Link</Nav.Link> */}
+            <Nav.Link href="#action1">API</Nav.Link>
+            <Nav.Link href="#action2">{filteredCountries && filteredCountries.length}</Nav.Link>
            
           </Nav>
+          <Navbar.Text className="me-3 ">
+          <MdOutlineLightMode /> Light Mode
+          <MdOutlineDarkMode /> Dark Mode
+          </Navbar.Text>
+          
           <Search onSearch={handleSearch} />
+          
+
         </Navbar.Collapse>
       </Container>
     </Navbar>
