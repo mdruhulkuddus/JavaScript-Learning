@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Countries from "./Countries";
 import Search from "./Search";
+import {Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
 const url = `https://restcountries.com/v3.1/all`;
 
@@ -57,8 +58,27 @@ const HomeCountryAPP = () => {
 
   return (
     <>
-      <h1>Courtrey app - {filteredCountries && filteredCountries.length}</h1>
-      <Search onSearch={handleSearch} />
+      {/* <h1>Courtrey app - {filteredCountries && filteredCountries.length}</h1> */}
+      <Navbar expand="lg" className="bg-body-tertiary" sticky="top" >
+      <Container fluid>
+        <Navbar.Brand href="#">Courtrey API App</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+            <Nav.Link href="#action1">{filteredCountries && filteredCountries.length}</Nav.Link>
+            {/* <Nav.Link href="#action2">Link</Nav.Link> */}
+           
+          </Nav>
+          <Search onSearch={handleSearch} />
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+
+     
       {isLoading && <h2 className="text-center">Loading......</h2>}
       {error && <h2 className="text-center">{error.message}</h2>}
       {countries && (
