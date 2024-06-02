@@ -4,6 +4,7 @@ import Search from "./Search";
 import {Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
+import "./Style.css"
 
 const url = `https://restcountries.com/v3.1/all`;
 
@@ -12,6 +13,13 @@ const HomeCountryAPP = () => {
   const [error, setError] = useState(null);
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState(countries);
+
+  const [theme, setTheme] = useState('light');
+
+
+  const toggle_mode = ()=>{
+    theme === 'light' ? setTheme('dark') : setTheme('light');
+  }
 
   const fetchData = async (url) => {
     setIsLoading(true);
@@ -59,9 +67,9 @@ const HomeCountryAPP = () => {
   };
 
   return (
-    <>
+    <div className={`wrapper ${theme}`}>
       {/* <h1>Courtrey app - {filteredCountries && filteredCountries.length}</h1> */}
-      <Navbar expand="lg" className="bg-body-tertiary" sticky="top" >
+      <Navbar expand="lg" className="bg-body-tertiary navbar" sticky="top" >
       <Container fluid>
         <Navbar.Brand href="#">Courtrey Info</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -76,8 +84,8 @@ const HomeCountryAPP = () => {
            
           </Nav>
           <Navbar.Text className="me-3 ">
-          <MdOutlineLightMode /> Light Mode
-          <MdOutlineDarkMode /> Dark Mode
+          {theme === 'light' && <MdOutlineLightMode onClick={()=>{toggle_mode()}}/> }
+          {theme === 'dark' && <MdOutlineDarkMode onClick={()=>{toggle_mode()}} /> }
           </Navbar.Text>
           
           <Search onSearch={handleSearch} />
@@ -97,7 +105,7 @@ const HomeCountryAPP = () => {
           onRemoveCounrty={handleRemoveCounntry}
         />
       )}
-    </>
+    </div>
   );
 };
 
