@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Countries from "./Countries";
 import Search from "./Search";
-import {Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import {
+  Button,
+  Container,
+  Form,
+  Nav,
+  Navbar,
+  NavDropdown,
+} from "react-bootstrap";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
-import "./Style.css"
+import "./Style.css";
 
 const url = `https://restcountries.com/v3.1/all`;
 
@@ -14,12 +21,16 @@ const HomeCountryAPP = () => {
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState(countries);
 
-  const [theme, setTheme] = useState('light');
+  const current_theme = localStorage.getItem("current_theme");
+  const [theme, setTheme] = useState(current_theme ? current_theme : "light");
 
+  useEffect(() => {
+    localStorage.setItem("current_theme", theme);
+  }, [theme]);
 
-  const toggle_mode = ()=>{
-    theme === 'light' ? setTheme('dark') : setTheme('light');
-  }
+  const toggle_mode = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
 
   const fetchData = async (url) => {
     setIsLoading(true);
@@ -69,33 +80,40 @@ const HomeCountryAPP = () => {
   return (
     <div className={`wrapper ${theme}`}>
       {/* <h1>Courtrey app - {filteredCountries && filteredCountries.length}</h1> */}
-      <Navbar expand="lg" className="bg-body-tertiary navbar" sticky="top" >
-      <Container fluid>
-        <Navbar.Brand href="#">Courtrey Info</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">API</Nav.Link>
-            <Nav.Link href="#action2">{filteredCountries && filteredCountries.length}</Nav.Link>
-           
-          </Nav>
-          <Navbar.Text className="me-3 ">
-          {theme === 'light' && <MdOutlineLightMode onClick={()=>{toggle_mode()}}/> }
-          {theme === 'dark' && <MdOutlineDarkMode onClick={()=>{toggle_mode()}} /> }
-          </Navbar.Text>
-          
-          <Search onSearch={handleSearch} />
-          
+      <Navbar expand="lg" className="bg-body-tertiary navbar" sticky="top">
+        <Container fluid>
+          <Navbar.Brand href="#">Courtrey Info</Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="me-auto my-2 my-lg-0"
+              style={{ maxHeight: "100px" }}
+              navbarScroll
+            >
+              <Nav.Link href="#action1">API</Nav.Link>
+              <Nav.Link href="#action2">
+                {filteredCountries && filteredCountries.length}
+              </Nav.Link>
+            </Nav>
+            <Navbar.Text className="me-3 ">
+              {theme === "light" ? (
+                <div onClick={toggle_mode} style={{ cursor: "pointer" }}>
+                  <MdOutlineLightMode />
+                  <span> Light Mode </span>
+                </div>
+              ) : (
+                <div onClick={toggle_mode} style={{ cursor: "pointer" }}>
+                  <MdOutlineDarkMode />
+                  <span> Dark Mode </span>
+                </div>
+              )}
+            </Navbar.Text>
 
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+            <Search onSearch={handleSearch} />
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
 
-     
       {isLoading && <h2 className="text-center">Loading......</h2>}
       {error && <h2 className="text-center">{error.message}</h2>}
       {countries && (
