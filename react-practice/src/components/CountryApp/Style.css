@@ -14,7 +14,9 @@
     transition: background 0.5s, color 0.5s;
   }
   
-  /* .navbar {
+  /* 
+  
+  .navbar {
     background: rgb(97, 96, 96);
     transition: background 0.5s, color 0.5s;
   }
@@ -27,5 +29,7 @@
   .wrapper.dark .navbar {
     background: #222;
     color: #fff;
-  } */
+  }
+  
+  */
 

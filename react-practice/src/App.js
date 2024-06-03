@@ -35,6 +35,7 @@ import CusDataFetch from "./components/CustomHooks/DataFetch";
 import ToastInTODO from "./components/ToastMessage/ToastInTODO";
 import HomeCountryAPP from "./components/CountryApp/HomeCountryAPP";
 import DynamicStyle from "./components/DynamicStyle/DynamicStyle";
+import PropTyps from "./components/PropTypes/PropTyps";
 
 // let items = [];
 // for(let i = 0; i < Data.length; i++){
@@ -153,7 +154,8 @@ function App() {
 {/* coutryAPP */}
 {/* <HomeCountryAPP /> */}
 
-<DynamicStyle />
+{/* <DynamicStyle /> */}
+<PropTyps />
   </div>
   );
  
