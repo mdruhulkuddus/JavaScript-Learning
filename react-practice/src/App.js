@@ -29,13 +29,17 @@ import React from "react";
 import SignUp from "./components/FORM_VALIDATE/SignUp";
 import Toggle from "./components/Toggle";
 import FAQs from "./components/FAQ/FAQs";
-import UseEffectExam from "./components/useEffect/UseEffectExam";
-import DataFetch from "./components/useEffect/DataFetch";
+import UseEffectExam from "./components/HOOKS/useEffect/UseEffectExam";
+import DataFetch from "./components/HOOKS/useEffect/DataFetch";
 import CusDataFetch from "./components/CustomHooks/DataFetch";
 import ToastInTODO from "./components/ToastMessage/ToastInTODO";
 import HomeCountryAPP from "./components/CountryApp/HomeCountryAPP";
 import DynamicStyle from "./components/DynamicStyle/DynamicStyle";
 import PropTyps from "./components/PropTypes/PropTyps";
+import LifeCycle from "./components/LifeCycle/LifeCycle";
+import RefExam from "./components/RefExample/RefExam";
+import UseRefExam from "./components/HOOKS/UseRefExamp/UseRefExam";
+import UseReducer from "./components/HOOKS/UseReducer/UseReducer";
 
 // let items = [];
 // for(let i = 0; i < Data.length; i++){
@@ -155,7 +159,14 @@ function App() {
 {/* <HomeCountryAPP /> */}
 
 {/* <DynamicStyle /> */}
-<PropTyps />
+{/* <PropTyps /> */}
+{/* <LifeCycle /> */}
+{/* <RefExam /> */}
+
+{/* <UseRefExam /> */}
+<UseReducer />
+
+
   </div>
   );
  

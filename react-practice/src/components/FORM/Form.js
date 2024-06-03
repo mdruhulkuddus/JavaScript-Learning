@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import style from "./form.css";
+import style from "./form.css"
 
 
 export default function FORM() {
