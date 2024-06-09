@@ -40,6 +40,8 @@ import LifeCycle from "./components/LifeCycle/LifeCycle";
 import RefExam from "./components/RefExample/RefExam";
 import UseRefExam from "./components/HOOKS/UseRefExamp/UseRefExam";
 import UseReducer from "./components/HOOKS/UseReducer/UseReducer";
+import Componet1 from "./components/PropDrilling/Componet1";
+import Routing from "./components/Routing/Routing";
 
 // let items = [];
 // for(let i = 0; i < Data.length; i++){
@@ -164,8 +166,10 @@ function App() {
 {/* <RefExam /> */}
 
 {/* <UseRefExam /> */}
-<UseReducer />
+{/* <UseReducer /> */}
 
+{/* <Componet1 /> */}
+<Routing />
 
   </div>
   );
