@@ -6,6 +6,7 @@ import Blogs from './pages/Blogs'
 import Error from './pages/Error'
 
 import Navba from './Navbar'
+import Blog from './pages/Blog'
 
 const Routing = () => {
   return (
@@ -17,6 +18,7 @@ const Routing = () => {
             <Route path='/' element={ <Home />}/>
             <Route path='/contact' element={ <Contact />}/>
             <Route path='/blogs' element={ <Blogs />}/>
+            <Route path='/blogs/:title' element={ <Blog />}/>
             <Route path='*' element={ <Error />}/>
         </Routes>
       </BrowserRouter>

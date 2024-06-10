@@ -1,19 +1,46 @@
-import React from 'react'
-import { Button } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from "react";
+import { Button, Card, CardBody } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { blogsData } from "../data";
 
 const Blogs = () => {
-    const navigate = useNavigate();
+  const [blogs, setBlogs] = useState(blogsData);
+  // console.log(blogs);
+
+  const navigate = useNavigate();
   return (
     <div>
       <h1>Blogs Page</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos delectus illum corrupti perferendis sunt, placeat rem architecto assumenda atque ratione qui fugit libero deserunt! Ullam ad deleniti, tempora laboriosam debitis perspiciatis pariatur eligendi aspernatur ipsum quo! Earum quaerat reiciendis nam ex soluta iste reprehenderit. Tempore cupiditate suscipit, voluptate debitis aliquid, eos aspernatur, rerum consequuntur quia laborum maxime nemo voluptatum. Dolores, voluptatem accusamus. Dolore ratione vero nam architecto, iusto voluptates quo id. Distinctio et enim maxime doloribus velit incidunt, assumenda sequi! Incidunt blanditiis eius, ipsam recusandae ea illum odit laborum aliquam voluptates soluta eligendi explicabo exercitationem numquam earum harum repellendus libero?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos delectus illum corrupti perferendis sunt, placeat rem architecto assumenda atque ratione qui fugit libero deserunt! Ullam ad deleniti, tempora laboriosam debitis perspiciatis pariatur eligendi aspernatur ipsum quo! Earum quaerat reiciendis nam ex soluta iste reprehenderit. Tempore cupiditate suscipit, voluptate debitis aliquid, eos aspernatur, rerum consequuntur quia laborum maxime nemo voluptatum. Dolores, voluptatem accusamus. Dolore ratione vero nam architecto, iusto voluptates quo id. Distinctio et enim maxime doloribus velit incidunt, assumenda sequi! Incidunt blanditiis eius, ipsam recusandae ea illum odit laborum aliquam voluptates soluta eligendi explicabo exercitationem numquam earum harum repellendus libero?</p>
-      <Button onClick={()=>{
-        navigate("/")
-      }}>Go to Home</Button>
-    </div>
-  )
-}
 
-export default Blogs
+      {blogs.map((blog) => {
+        const { id, title, body } = blog;
+
+        return (
+          <article key={id} style={{display:"inline-grid"}}>
+            <Card style={{ width: "18rem" }}>
+              <Card.Body>
+                <Card.Title>{title}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">
+                  Programming
+                </Card.Subtitle>
+                <Card.Text>{body.substring(0, 150) + ".........."}</Card.Text>
+                <Card.Link href={"blogs/"+title}>Learn More</Card.Link>
+                {/* <link to={title}>go</link> */}
+              </Card.Body>
+            </Card>
+          </article>
+        );
+      })}
+<br></br>
+      <Button
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        Go to Home
+      </Button>
+    </div>
+  );
+};
+
+export default Blogs;

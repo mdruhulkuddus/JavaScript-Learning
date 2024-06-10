@@ -11,7 +11,7 @@ const PropTyps = () => {
   })
   return (
     <div>
-      <User userName={name} userId = {id} user={user}/>
+      <User userName={name} userId = {id} user={user}/> 
     </div>
   )
 }
