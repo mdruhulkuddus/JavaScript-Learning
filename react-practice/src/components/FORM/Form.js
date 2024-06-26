@@ -41,6 +41,6 @@ export default function FORM() {
           <button type='submit'>Register</button>
         </div>
       </form>
-    </div>
+    </div>  
   )
 }
