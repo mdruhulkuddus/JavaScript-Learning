@@ -42,6 +42,7 @@ import UseRefExam from "./components/HOOKS/UseRefExamp/UseRefExam";
 import UseReducer from "./components/HOOKS/UseReducer/UseReducer";
 import Componet1 from "./components/PropDrilling/Componet1";
 import Routing from "./components/Routing/Routing";
+import PagiHOME from "./components/Pagination/PagiHOME";
 
 // let items = [];
 // for(let i = 0; i < Data.length; i++){
@@ -169,8 +170,10 @@ function App() {
 {/* <UseReducer /> */}
 
 {/* <Componet1 /> */}
-<Routing />
+{/* <Routing /> */}
 
+{/* pagination  */}
+<PagiHOME />
   </div>
   );
  

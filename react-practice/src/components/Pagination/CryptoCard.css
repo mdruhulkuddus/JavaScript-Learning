@@ -1,0 +1,38 @@
+.card {
+    cursor: pointer;
+    background: rgb(231, 231, 231);
+    border-radius: 20px;
+    margin: 2rem 4rem;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card_image {
+    width: 200px;
+    height: 200px;
+}
+
+.card_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card_info {
+    margin-top: 1rem;
+}
+
+.card_info h2 {
+    margin-bottom: 10px;
+    color: black;
+}
+
+.card_info h3 {
+    color: #272727;
+}
